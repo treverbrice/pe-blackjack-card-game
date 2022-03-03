@@ -21,3 +21,22 @@ for i in range(26):
 
 print(half_deck)
 print(my_cards.cards)'''
+
+'''import hand
+import deck
+import card
+
+my_deck = deck.deck()
+my_deck.shuffle()
+
+my_hand = hand.hand(my_deck.deal(), my_deck.deal())
+print(my_hand.cards)
+print(my_hand.getValue())
+
+card1 = card.card('spade', 'a')
+card2 = card.card('heart', 'k')
+card3 = card.card('diamond', 'a')
+card4 = card.card('club', '4')
+new_hand = hand.hand(card1, card3, card4)
+print(new_hand.cards)
+print(new_hand.getValue())'''
