@@ -2,11 +2,13 @@
 # can return the value of the hand
 # adjusts value for any aces
 # can accept new cards
+
 from card import card
 
 class hand:
     def __init__(self, *args):
         self.cards = [*args]
+
 
     def getValue(self):
         num_aces = 0
@@ -24,5 +26,10 @@ class hand:
 
         return value
 
+
     def addCard(self, new_card):
         self.cards.append(new_card)
+
+
+    def __repr__(self):
+        return(str(self.cards))
