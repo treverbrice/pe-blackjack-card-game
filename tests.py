@@ -41,7 +41,7 @@ new_hand = hand.hand(card1, card3, card4)
 print(new_hand.cards)
 print(new_hand.getValue())'''
 
-import player
+'''import player
 import deck
 
 name = "Trever"
@@ -51,4 +51,16 @@ my_player = player.player(name, balance)
 my_deck = deck.deck()
 my_deck.shuffle()
 
-my_player.playRound(my_deck)
+my_player.playRound(my_deck)'''
+
+import dealer
+import deck
+
+my_dealer = dealer.dealer()
+my_deck = deck.deck()
+my_deck.shuffle()
+
+my_dealer.opening(my_deck)
+if my_dealer.checkNatural():
+    print("less gooooooo")
+my_dealer.playRound(my_deck)
