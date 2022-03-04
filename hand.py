@@ -32,4 +32,4 @@ class hand:
 
 
     def __repr__(self):
-        return(str(self.cards))
+        return(str(self.cards)[1:-1])
