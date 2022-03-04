@@ -17,7 +17,7 @@ class dealer:
 
         self.hand = hand(card_one, card_two)
 
-        return deck
+        return
 
 
     def playRound(self, deck):
@@ -31,7 +31,7 @@ class dealer:
             print(f"The dealer has: {self.hand}")
 
         print("The dealer stays")
-        return deck
+        return
 
 
     def checkNatural(self):
