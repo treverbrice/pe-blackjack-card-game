@@ -20,27 +20,34 @@ class player:
 
 
     def playRound(self, deck):
-        my_hand = hand(deck.deal(), deck.deal())
-        print(f"{self.name} is dealt: {my_hand}")
+        '''
+        This method returns True if the player draws a natural 21
+        '''
+        self.hand = hand(deck.deal(), deck.deal())
+        print(f"{self.name} is dealt: {self.hand}")
 
         # check for natural
-        if my_hand.getValue() == 21:
-            return(21, True)
+        if self.hand.getValue() == 21:
+            return True
 
         action = self._playerAction()
         while action == 'hit':
             new_card = deck.deal()
             print(f"{self.name} is dealt: {new_card}")
-            my_hand.addCard(new_card)
-            print(f"{self.name} now has: {my_hand}")
-            
+            self.hand.addCard(new_card)
+            print(f"{self.name} now has: {self.hand}")
+
             # check for bust / 21
-            if my_hand.getValue() >= 21:
+            if self.hand.getValue() >= 21:
                 break
             action = self._playerAction()
 
-        return(my_hand.getValue(), False)
+        return False
 
 
     def adjustBalance(self, adjustment):
         self.balance += adjustment
+
+
+    def getValue(self):
+        return self.hand.getValue()
