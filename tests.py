@@ -40,3 +40,15 @@ card4 = card.card('club', '4')
 new_hand = hand.hand(card1, card3, card4)
 print(new_hand.cards)
 print(new_hand.getValue())'''
+
+import player
+import deck
+
+name = "Trever"
+balance = 500
+
+my_player = player.player(name, balance)
+my_deck = deck.deck()
+my_deck.shuffle()
+
+my_player.playRound(my_deck)
