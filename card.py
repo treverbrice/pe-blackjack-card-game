@@ -17,6 +17,7 @@ class card:
             raise ValueError("invalid suit")
         self.value = str(value)
 
+
     def getValue(self):
         if self.value.isdigit():
             return int(self.value)
@@ -24,6 +25,7 @@ class card:
             return 11
         else:
             return 10
+
 
     def __repr__(self):
         return(self.suit + self.value)

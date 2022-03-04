@@ -4,7 +4,6 @@ from card import card
 import random
 
 class deck:
-
     def __init__(self):
         self.cards = []
         suits = ["spade", "club", "heart", "diamond"]
@@ -23,8 +22,10 @@ class deck:
             self.cards.append(queen)
             self.cards.append(king)
 
+
     def shuffle(self):
         random.shuffle(self.cards)
+
 
     def deal(self):
         top_card = self.cards.pop(0)
