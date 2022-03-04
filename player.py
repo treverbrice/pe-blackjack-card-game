@@ -20,15 +20,14 @@ class player:
 
 
     def playRound(self, deck):
-        '''
-        This method returns True if the player draws a natural 21
-        '''
+        self.natural = False
         self.hand = hand(deck.deal(), deck.deal())
         print(f"{self.name} is dealt: {self.hand}")
 
         # check for natural
         if self.hand.getValue() == 21:
-            return True
+            self.natural = True
+            return
 
         action = self._playerAction()
         while action == 'hit':
@@ -41,8 +40,6 @@ class player:
             if self.hand.getValue() >= 21:
                 break
             action = self._playerAction()
-
-        return False
 
 
     def adjustBalance(self, adjustment):
