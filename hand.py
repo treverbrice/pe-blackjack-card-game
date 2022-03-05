@@ -27,8 +27,9 @@ class hand:
         return value
 
 
-    def addCard(self, new_card):
-        self.cards.append(new_card)
+    def addCard(self, *new_cards):
+        for card in new_cards:
+            self.cards.append(card)
 
 
     def __repr__(self):
