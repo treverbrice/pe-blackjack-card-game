@@ -33,11 +33,12 @@ my_hand = hand.hand(my_deck.deal(), my_deck.deal())
 print(my_hand.cards)
 print(my_hand.getValue())
 
+new_hand = hand.hand()
 card1 = card.card('spade', 'a')
 card2 = card.card('heart', 'k')
 card3 = card.card('diamond', 'a')
 card4 = card.card('club', '4')
-new_hand = hand.hand(card1, card3, card4)
+new_hand.addCard(card1, card3, card4)
 print(new_hand.cards)
 print(new_hand.getValue())'''
 
@@ -53,7 +54,7 @@ my_deck.shuffle()
 
 my_player.playRound(my_deck)'''
 
-import dealer
+'''import dealer
 import deck
 
 my_dealer = dealer.dealer()
@@ -63,4 +64,4 @@ my_deck.shuffle()
 my_dealer.opening(my_deck)
 if my_dealer.checkNatural():
     print("less gooooooo")
-my_dealer.playRound(my_deck)
+my_dealer.playRound(my_deck)'''
