@@ -8,8 +8,11 @@ class count(hand.hand):
 
     def addCard(self, *new_cards):
         for card in new_cards:
-            if card.getValue <= 6:
+            if card.getValue() <= 6:
                 self.count += 1
-            elif card.getValue >= 10:
+            elif card.getValue() >= 10:
                 self.count -= 1
             self.cards.append(card)
+
+    def numCards(self):
+        return len(self.cards)
