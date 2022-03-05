@@ -1,5 +1,5 @@
 # Blackjack
-Blackjack project from ProgrammingExpert course. \n
+Blackjack project from ProgrammingExpert course. <br>
 Modified to help players practice basic card counting skills
 
 # View online with Repl.it
