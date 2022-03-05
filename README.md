@@ -1,5 +1,6 @@
 # Blackjack
 Blackjack project from ProgrammingExpert course
+Modified to help players practice basic card counting skills
 
 # View online with Repl.it
 Go to this link to play the game in your browser:
