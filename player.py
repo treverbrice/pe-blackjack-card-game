@@ -3,6 +3,7 @@
 # has adjustBalance method to give out winnings / take loses
 
 from hand import hand
+import time
 
 class player:
     def __init__(self, name, balance):
@@ -21,8 +22,15 @@ class player:
 
     def playRound(self, deck):
         self.natural = False
-        self.hand = hand(deck.deal(), deck.deal())
-        print(f"{self.name} is dealt: {self.hand}")
+        card_one = deck.deal()
+        card_two = deck.deal()
+
+        print(f"{self.name} is dealt: {card_one}")
+        time.sleep(1)
+        print(f"{self.name} is dealt: {card_two}")
+        time.sleep(1)
+
+        self.hand = hand(card_one, card_two)
 
         # check for natural
         if self.hand.getValue() == 21:
@@ -33,8 +41,10 @@ class player:
         while action == 'hit':
             new_card = deck.deal()
             print(f"{self.name} is dealt: {new_card}")
+            time.sleep(1)
             self.hand.addCard(new_card)
             print(f"{self.name} now has: {self.hand}")
+            time.sleep(1)
 
             # check for bust / 21
             if self.hand.getValue() >= 21:

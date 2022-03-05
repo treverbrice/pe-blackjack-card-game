@@ -3,6 +3,7 @@
 # has a method for checking for a natural, used if player gets a natural
 
 from hand import hand
+import time
 
 class dealer:
     def __init__(self):
@@ -13,7 +14,10 @@ class dealer:
         card_one = deck.deal()
         card_two = deck.deal()
 
-        print(f"The dealer is dealt: {card_one}, Unknown")
+        print(f"The dealer is dealt: {card_one}")
+        time.sleep(1)
+        print(f"The dealer is dealt: Unkown")
+        time.sleep(1)
 
         self.hand = hand(card_one, card_two)
 
@@ -22,13 +26,16 @@ class dealer:
 
     def playRound(self, deck):
         print(f"The dealer has: {self.hand}")
+        time.sleep(1)
 
         while self.hand.getValue() <= 16:
             new_card = deck.deal()
             print(f"The dealer is dealt: {new_card}")
+            time.sleep(1)
 
             self.hand.addCard(new_card)
             print(f"The dealer has: {self.hand}")
+            time.sleep(1)
 
         print("The dealer stays")
         return
@@ -36,6 +43,7 @@ class dealer:
 
     def checkNatural(self):
         print(f"The dealer has: {self.hand}")
+        time.sleep(1)
         return(self.hand.getValue() == 21)
 
 
