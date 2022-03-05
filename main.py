@@ -51,7 +51,8 @@ def roundReset():
     resetHands(count, dealer, player)
     print(f"The current count is: {count.count}")
     print(f"cards dealt: {count.numCards()} out of: {shoes * 52}")
-    playAgain = askPlayAgain()
+    question = askPlayAgain()
+    return question
 
 
 # pre-game housekeeping
@@ -80,21 +81,21 @@ while playAgain.lower() == "yes":
     if player.natural:
         if dealer.checkNatural():
             print("You both have 21. Your bet will be returned.")
-            roundReset()
+            playAgain = roundReset()
             continue
         else:
             print(f"Congrats {player.name}, you got a BlackJack!", end = " ")
             winnings = 1.5 * bet
             print(f"You won ${winnings}")
             player.adjustBalance(winnings)
-            roundReset()
+            playAgain = roundReset()
             continue
     # check for player busting
     elif player.getValue() > 21:
         print(f"Your hand value is over 21, you lose ${bet}")
         player.adjustBalance(-(bet))
         dealer.playRound(deck)
-        roundReset()
+        playAgain = roundReset()
         continue
 
     # player has a valid hand, dealers turn
@@ -104,21 +105,21 @@ while playAgain.lower() == "yes":
     if dealer.getValue() > 21:
         print(f"The dealer busted, you win ${bet}!")
         player.adjustBalance(bet)
-        roundReset()
+        playAgain = roundReset()
     # check for dealer winning
     elif dealer.getValue() > player.getValue():
         print(f"The dealer wins, you lose ${bet}")
         player.adjustBalance(-(bet))
-        roundReset()
+        playAgain = roundReset()
     # check for player winning
     elif dealer.getValue() < player.getValue():
         print(f"You won {player.name}! You win ${bet}")
         player.adjustBalance(bet)
-        roundReset()
+        playAgain = roundReset()
     # must be a tie
     else:
         print(f"You tied! Your bet will be returned to you")
-        roundReset()
+        playAgain = roundReset()
 
 print(f"\n{player.name}, you left the game with ${player.balance}.")
 print("Play again soon!")
