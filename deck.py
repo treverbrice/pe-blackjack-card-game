@@ -4,23 +4,24 @@ from card import card
 import random
 
 class deck:
-    def __init__(self):
+    def __init__(self, shoes = 1):
         self.cards = []
-        suits = ["spade", "club", "heart", "diamond"]
-        for suit in range(4):
-            ace = card(suits[suit], "a")
-            self.cards.append(ace)
+        for _ in range(shoes):
+            suits = ["spade", "club", "heart", "diamond"]
+            for suit in range(4):
+                ace = card(suits[suit], "a")
+                self.cards.append(ace)
 
-            for num in range(2, 11):
-                new_card = card(suits[suit], num)
-                self.cards.append(new_card)
+                for num in range(2, 11):
+                    new_card = card(suits[suit], num)
+                    self.cards.append(new_card)
 
-            jack = card(suits[suit], "j")
-            queen = card(suits[suit], "q")
-            king = card(suits[suit], "k")
-            self.cards.append(jack)
-            self.cards.append(queen)
-            self.cards.append(king)
+                jack = card(suits[suit], "j")
+                queen = card(suits[suit], "q")
+                king = card(suits[suit], "k")
+                self.cards.append(jack)
+                self.cards.append(queen)
+                self.cards.append(king)
 
 
     def shuffle(self):
@@ -32,20 +33,21 @@ class deck:
         return top_card
 
 
-    def reset(self):
+    def reset(self, shoes = 1):
         self.cards = []
-        suits = ["spade", "club", "heart", "diamond"]
-        for suit in range(4):
-            ace = card(suits[suit], "a")
-            self.cards.append(ace)
+        for _ in range(shoes):
+            suits = ["spade", "club", "heart", "diamond"]
+            for suit in range(4):
+                ace = card(suits[suit], "a")
+                self.cards.append(ace)
 
-            for num in range(2, 11):
-                new_card = card(suits[suit], num)
-                self.cards.append(new_card)
+                for num in range(2, 11):
+                    new_card = card(suits[suit], num)
+                    self.cards.append(new_card)
 
-            jack = card(suits[suit], "j")
-            queen = card(suits[suit], "q")
-            king = card(suits[suit], "k")
-            self.cards.append(jack)
-            self.cards.append(queen)
-            self.cards.append(king)
+                jack = card(suits[suit], "j")
+                queen = card(suits[suit], "q")
+                king = card(suits[suit], "k")
+                self.cards.append(jack)
+                self.cards.append(queen)
+                self.cards.append(king)
